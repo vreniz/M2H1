@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galería de mascotas de Vanessa Fontalvo — conoce a Luna, Mango y Perla." />
+  <meta name="author" content="Vanessa Fontalvo" />
+  <title>Mis Mascotas — Vanessa Fontalvo</title>
+  <!-- Vinculación de la misma hoja de estilos compartida -->
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="page-mascotas">
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo con enlace de vuelta al portafolio -->
+      <div class="logo">
+        <a href="index.html" class="logo-link" aria-label="Volver al portafolio">
+          <span class="logo-initial">VF</span>
+          <span class="logo-name">Vanessa Fontalvo</span>
+        </a>
+      </div>
+
+      <!-- Navegación de la página de mascotas -->
+      <nav class="main-nav" aria-label="Navegación">
+        <ul>
+          <!-- Enlace de regreso al portafolio principal -->
+          <li><a href="index.html" class="nav-back">← Volver al portafolio</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#curiosidades">Curiosidades</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO DE MASCOTAS ===================== -->
+  <section class="pets-hero">
+    <div class="pets-hero-content">
+      <p class="hero-label">Una sección especial</p>
+      <h1 class="hero-title pets-hero-title">
+        Mis <em>Mascotas</em> 🐾
+      </h1>
+      <p class="hero-sub">
+        Tres compañeros que llenan mi vida de alegría, caos y amor incondicional.
+      </p>
+    </div>
+    <!-- Decoración de huellas -->
+    <div class="paw-deco" aria-hidden="true">
+      <span>🐾</span><span>🐾</span><span>🐾</span>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ===================== GALERÍA DE MASCOTAS ===================== -->
+    <section id="galeria" class="section section-gallery">
+      <div class="section-inner">
+        <span class="section-tag">01 — La familia peluda</span>
+        <h2 class="section-title">Conoce a mis compañeros.</h2>
+
+        <!-- Contenedor de la galería -->
+        <div class="pets-grid">
+
+          <!-- ---- Mascota 1: Luna ---- -->
+          <article class="pet-card">
+            <!-- Imagen de la mascota (usando placeholder de Picsum con temática animal) -->
+            <div class="pet-image-wrap">
+              <img src="https://picsum.photos/seed/cat-luna/600/450"
+                alt="Luna, una gata atigrada de color naranja descansando sobre una almohada suave" width="600"
+                height="450" loading="lazy" />
+              <span class="pet-badge">Gata</span>
+            </div>
+            <!-- Descripción de la mascota -->
+            <div class="pet-info">
+              <h3 class="pet-name">Luna 🌙</h3>
+              <p class="pet-age">5 años · Hembra</p>
+              <p class="pet-desc">
+                Luna es una gata atigrada de ojos color miel que llegó a casa en un lluvioso diciembre.
+                Es la reina indiscutible del hogar: exige mimos en sus propios términos y tiene
+                un talento especial para aparecer exactamente cuando estás trabajando en algo importante.
+                Su hobby favorito es ver pájaros desde la ventana y juzgar todo lo que hago.
+              </p>
+              <!-- Etiquetas de personalidad -->
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Independiente</li>
+                <li>Curiosa</li>
+                <li>Mimosa</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ---- Mascota 2: Mango ---- -->
+          <article class="pet-card">
+            <div class="pet-image-wrap">
+              <img src="https://picsum.photos/seed/dog-mango/600/450"
+                alt="Mango, un perro golden retriever con pelaje dorado jugando en el jardín" width="600" height="450"
+                loading="lazy" />
+              <span class="pet-badge pet-badge--dog">Perro</span>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-name">Mango 🥭</h3>
+              <p class="pet-age">3 años · Macho</p>
+              <p class="pet-desc">
+                Mango es un golden retriever con energía infinita y amor incondicional para repartir.
+                Llegó como cachorro y desde entonces convirtió cada rincón de la casa en su parque personal.
+                Es el más sociable de la familia: hace amigos en segundos y nunca rechaza un paseo,
+                una pelota o una siesta junto a ti en el sofá.
+              </p>
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Juguetón</li>
+                <li>Leal</li>
+                <li>Travieso</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- ---- Mascota 3: Perla ---- -->
+          <article class="pet-card">
+            <div class="pet-image-wrap">
+              <img src="https://picsum.photos/seed/rabbit-perla/600/450"
+                alt="Perla, una coneja blanca con manchas grises sentada sobre hierba verde" width="600" height="450"
+                loading="lazy" />
+              <span class="pet-badge pet-badge--rabbit">Coneja</span>
+            </div>
+            <div class="pet-info">
+              <h3 class="pet-name">Perla 🤍</h3>
+              <p class="pet-age">2 años · Hembra</p>
+              <p class="pet-desc">
+                Perla es la sorpresa más tierna que nos trajo mi sobrina un cumpleaños. Es una coneja
+                enana de manchas grises que resultó tener una personalidad enorme. Le encanta explorar,
+                saltar sobre los cojines y convencer a todos de que merece más zanahorias.
+                Es la más silenciosa de la familia, pero también la más observadora.
+              </p>
+              <ul class="pet-tags" aria-label="Personalidad">
+                <li>Tranquila</li>
+                <li>Exploradora</li>
+                <li>Glotona</li>
+              </ul>
+            </div>
+          </article>
+
+        </div><!-- /pets-grid -->
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: CURIOSIDADES ===================== -->
+    <section id="curiosidades" class="section section-curiosidades">
+      <div class="section-inner">
+        <span class="section-tag">02 — Datos divertidos</span>
+        <h2 class="section-title">Lo que aprendí teniéndolos.</h2>
+
+        <!-- Lista de curiosidades / aprendizajes -->
+        <ul class="curiosidades-list">
+          <li>
+            <span class="curio-icon">🐱</span>
+            <p>Los gatos duermen entre 12 y 16 horas al día. Luna lo confirma puntualmente.</p>
+          </li>
+          <li>
+            <span class="curio-icon">🐶</span>
+            <p>Los golden retriever fueron criados originalmente para recuperar presas de caza sin dañarlas, de ahí su
+              boca "suave".</p>
+          </li>
+          <li>
+            <span class="curio-icon">🐇</span>
+            <p>Los conejos son animales crepusculares: están más activos al amanecer y al atardecer.</p>
+          </li>
+          <li>
+            <span class="curio-icon">❤️</span>
+            <p>Tener mascotas reduce el estrés y mejora la salud cardiovascular. Mi cardióloga está orgullosa.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA CON ENLACE DE RETORNO ===================== -->
+  <footer class="site-footer pets-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">🐾 Luna, Mango y Perla aprueban este mensaje.</p>
+      <!-- Enlace de retorno al portafolio principal -->
+      <a href="index.html" class="btn-primary btn-back">← Volver al portafolio</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

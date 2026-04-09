@@ -1,0 +1,944 @@
+/* ============================================================
+   styles.css — Portafolio Personal de Alejandro Reyes
+   Estética: Editorial moderna con toques orgánicos
+   ============================================================ */
+
+/* ---- Variables globales de diseño ---- */
+:root {
+  /* Paleta de colores */
+  --color-bg:          #F7F4EE;   /* Crema cálido — fondo principal */
+  --color-bg-alt:      #EDEAE3;   /* Crema más oscuro — secciones alternas */
+  --color-surface:     #FFFFFF;   /* Blanco puro — tarjetas */
+  --color-ink:         #1A1612;   /* Casi negro — texto principal */
+  --color-ink-light:   #6B6560;   /* Gris marrón — texto secundario */
+  --color-accent:      #C0572B;   /* Terracota — acento principal */
+  --color-accent-soft: #F0C9B5;   /* Terracota pastel — fondos de acento */
+  --color-gold:        #B8860B;   /* Dorado oscuro — detalles especiales */
+  --color-pets:        #3D6B4F;   /* Verde bosque — tema mascotas */
+  --color-pets-light:  #C5DBC9;   /* Verde claro — fondos mascotas */
+
+  /* Tipografía */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', 'Helvetica Neue', sans-serif;
+
+  /* Espaciado base */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  7rem;
+
+  /* Bordes y sombras */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --shadow-card: 0 4px 24px rgba(26, 22, 18, 0.10);
+  --shadow-img:  0 8px 32px rgba(26, 22, 18, 0.18);
+
+  /* Transiciones */
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   RESET Y BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.7;
+  font-weight: 400;
+  /* Textura sutil de fondo */
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(192, 87, 43, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.04) 0%, transparent 50%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================================
+   TIPOGRAFÍA
+   ============================================================ */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   HEADER / NAVEGACIÓN
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 244, 238, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(26, 22, 18, 0.08);
+  padding: var(--space-sm) 0;
+}
+
+.header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* Logo */
+.logo,
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.logo-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Menú de navegación */
+.main-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.main-nav a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-ink-light);
+  letter-spacing: 0.02em;
+  padding: 4px 0;
+  position: relative;
+  transition: color var(--transition);
+}
+
+/* Línea subrayado animada en hover */
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+/* Hover: cambia color y despliega la línea */
+.main-nav a:hover {
+  color: var(--color-accent);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Enlace especial de mascotas en el menú */
+.nav-highlight {
+  background: var(--color-accent-soft);
+  color: var(--color-accent) !important;
+  padding: 6px 14px !important;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.nav-highlight:hover {
+  background: var(--color-accent);
+  color: var(--color-surface) !important;
+}
+
+.nav-highlight::after {
+  display: none; /* Sin línea en el botón redondeado */
+}
+
+/* Enlace "volver" en página de mascotas */
+.nav-back {
+  color: var(--color-pets) !important;
+  font-weight: 500;
+}
+
+.nav-back:hover {
+  color: var(--color-pets) !important;
+}
+
+.nav-back::after {
+  background: var(--color-pets) !important;
+}
+
+/* ============================================================
+   SECCIÓN HERO — PORTAFOLIO
+   ============================================================ */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-xl) var(--space-md);
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 680px;
+  position: relative;
+  z-index: 2;
+  /* Animación de entrada suave */
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: var(--space-sm);
+}
+
+.hero-title {
+  margin-bottom: var(--space-sm);
+  color: var(--color-ink);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--color-ink-light);
+  margin-bottom: var(--space-md);
+  max-width: 480px;
+}
+
+/* Decoración geométrica del hero */
+.hero-deco {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deco-circle {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 2px solid rgba(192, 87, 43, 0.15);
+}
+
+.deco-line {
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  position: absolute;
+  top: 50%;
+  left: -100px;
+}
+
+/* ============================================================
+   HERO — PÁGINA DE MASCOTAS
+   ============================================================ */
+.pets-hero {
+  background: linear-gradient(135deg, var(--color-pets) 0%, #2a4d38 100%);
+  color: white;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pets-hero::before {
+  /* Patrón de puntos decorativo */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.pets-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s ease both;
+}
+
+.pets-hero .hero-label {
+  background: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pets-hero-title {
+  color: white;
+}
+
+.pets-hero-title em {
+  color: var(--color-pets-light);
+}
+
+.pets-hero .hero-sub {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Huellas decorativas flotantes */
+.paw-deco {
+  position: absolute;
+  bottom: var(--space-sm);
+  right: var(--space-md);
+  font-size: 1.8rem;
+  opacity: 0.2;
+  display: flex;
+  gap: var(--space-xs);
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.btn-primary {
+  display: inline-block;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-ink);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+/* Hover del botón: invierte colores */
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.btn-submit {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.btn-submit:hover {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.btn-back {
+  background: var(--color-pets);
+  border-color: var(--color-pets);
+  color: white;
+}
+
+.btn-back:hover {
+  background: transparent;
+  color: white;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* ============================================================
+   SECCIONES GENÉRICAS
+   ============================================================ */
+.section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* Alternar el color de fondo entre secciones */
+.section:nth-child(even) {
+  background-color: var(--color-bg-alt);
+}
+
+.section-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Etiqueta pequeña encima del título */
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title {
+  margin-bottom: var(--space-md);
+  color: var(--color-ink);
+}
+
+/* ============================================================
+   SECCIÓN: SOBRE MÍ
+   ============================================================ */
+.section-about {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.section-about .section-inner {
+  /* El inner ocupa la columna izquierda */
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: var(--color-ink-light);
+  margin-bottom: var(--space-md);
+  max-width: 600px;
+  line-height: 1.8;
+}
+
+/* Lista de habilidades como chips */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.skills-list li {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 20px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.skills-list li:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Placeholder circular de imagen de perfil */
+.about-image-placeholder {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  /* Sombra en imagen de perfil */
+  box-shadow: var(--shadow-img);
+}
+
+/* ============================================================
+   SECCIÓN: PROYECTOS
+   ============================================================ */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px; /* Separa con una línea fina */
+  background: rgba(26, 22, 18, 0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.project-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  transition: background var(--transition), transform var(--transition);
+}
+
+/* Hover en tarjeta de proyecto */
+.project-card:hover {
+  background: var(--color-bg);
+  transform: translateX(6px);
+}
+
+.project-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-accent-soft);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.project-info h3 {
+  margin-bottom: 6px;
+}
+
+.project-link {
+  position: relative;
+  color: var(--color-ink);
+  transition: color var(--transition);
+}
+
+/* Subrayado animado en enlaces de proyectos */
+.project-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.project-link:hover {
+  color: var(--color-accent);
+}
+
+.project-link:hover::after {
+  width: 100%;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: var(--color-ink-light);
+  margin-bottom: 8px;
+}
+
+.project-tech {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   SECCIÓN: CONTACTO
+   ============================================================ */
+.section-contact {
+  background: var(--color-ink) !important;
+  color: var(--color-bg);
+}
+
+.section-contact .section-tag {
+  color: var(--color-accent-soft);
+}
+
+.section-contact .section-title {
+  color: var(--color-bg);
+}
+
+.contact-intro {
+  color: rgba(247, 244, 238, 0.7);
+  margin-bottom: var(--space-md);
+  max-width: 500px;
+}
+
+/* Formulario */
+.contact-form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(247, 244, 238, 0.6);
+}
+
+/* Estilo de inputs y textarea */
+.form-group input,
+.form-group textarea {
+  background: rgba(247, 244, 238, 0.06);
+  border: 1px solid rgba(247, 244, 238, 0.16);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition), background var(--transition);
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(247, 244, 238, 0.3);
+}
+
+/* Hover y focus de los campos */
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: rgba(247, 244, 238, 0.35);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  background: rgba(192, 87, 43, 0.08);
+}
+
+/* ============================================================
+   SECCIÓN: GALERÍA DE MASCOTAS
+   ============================================================ */
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+/* Tarjeta de mascota */
+.pet-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Hover en tarjeta de mascota: levitar */
+.pet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-img);
+}
+
+/* Contenedor de imagen */
+.pet-image-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+/* Imagen con sombra y borde redondeado (heredado del card) */
+.pet-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  /* Sombra interna sutil */
+  box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Zoom suave en la imagen al hacer hover en la tarjeta */
+.pet-card:hover .pet-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* Badge de tipo de mascota */
+.pet-badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: var(--color-pets);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.pet-badge--dog   { background: #8B5A2B; }
+.pet-badge--rabbit { background: #6B4C8F; }
+
+/* Información de la mascota */
+.pet-info {
+  padding: var(--space-sm) var(--space-sm) var(--space-md);
+}
+
+.pet-name {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+  color: var(--color-ink);
+}
+
+.pet-age {
+  font-size: 0.8rem;
+  color: var(--color-pets);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+}
+
+.pet-desc {
+  font-size: 0.9rem;
+  color: var(--color-ink-light);
+  line-height: 1.7;
+  margin-bottom: var(--space-sm);
+}
+
+/* Etiquetas de personalidad */
+.pet-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pet-tags li {
+  background: var(--color-pets-light);
+  color: var(--color-pets);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.pet-tags li:hover {
+  background: var(--color-pets);
+  color: white;
+}
+
+/* ============================================================
+   SECCIÓN: CURIOSIDADES
+   ============================================================ */
+.section-curiosidades {
+  background: var(--color-pets) !important;
+  color: white;
+}
+
+.section-curiosidades .section-tag {
+  color: var(--color-pets-light);
+}
+
+.section-curiosidades .section-title {
+  color: white;
+}
+
+.curiosidades-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.curiosidades-list li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  transition: background var(--transition);
+}
+
+.curiosidades-list li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.curio-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.curiosidades-list p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: var(--space-md);
+}
+
+.footer-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: rgba(247, 244, 238, 0.5);
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: var(--color-accent-soft);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+}
+
+/* Footer de mascotas: usa el verde */
+.pets-footer {
+  background: #1e3829;
+  text-align: center;
+}
+
+.pets-footer .footer-inner {
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.pets-footer .footer-copy {
+  color: rgba(197, 219, 201, 0.7);
+}
+
+/* ============================================================
+   ANIMACIONES
+   ============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — Pantallas medianas y pequeñas
+   ============================================================ */
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .main-nav ul {
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: var(--space-lg);
+  }
+
+  .hero-deco {
+    display: none; /* Oculta decoración en móvil */
+  }
+
+  /* En móvil, la sección "sobre mí" se apila verticalmente */
+  .section-about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-image-wrap {
+    display: flex;
+    justify-content: center;
+    order: -1; /* La imagen va arriba */
+  }
+
+  .skills-list {
+    justify-content: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pets-grid {
+    grid-template-columns: 1fr;
+  }
+}

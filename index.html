@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portafolio personal de Vanessa Fontalvo — Desarrollador Web Frontend" />
+  <meta name="author" content="Vanessa Fontalvo" />
+  <title>Vanessa Fontalvo — Portafolio</title>
+  <!-- Vinculación de estilos externos -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fuentes de Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ===================== ENCABEZADO Y NAVEGACIÓN ===================== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo / Nombre -->
+      <div class="logo">
+        <span class="logo-initial">VF</span>
+        <span class="logo-name">Vanessa Fontalvo</span>
+      </div>
+
+      <!-- Menú de navegación principal -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <!-- Enlace a la página secundaria de mascotas -->
+          <li><a href="mascotas.html" class="nav-highlight">🐾 Mis Mascotas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO / PRESENTACIÓN ===================== -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label">Bienvenido a mi portafolio</p>
+      <h1 class="hero-title">
+        Diseño &amp;<br />
+        <em>Desarrollo</em><br />
+        con propósito.
+      </h1>
+      <p class="hero-sub">Construyo experiencias digitales que conectan personas con ideas.</p>
+      <a href="#proyectos" class="btn-primary">Ver mis proyectos ↓</a>
+    </div>
+    <!-- Elemento decorativo geométrico -->
+    <div class="hero-deco" aria-hidden="true">
+      <div class="deco-circle"></div>
+      <div class="deco-line"></div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ===================== SECCIÓN: SOBRE MÍ ===================== -->
+    <section id="sobre-mi" class="section section-about">
+      <div class="section-inner">
+        <!-- Etiqueta de sección -->
+        <span class="section-tag">01 — Sobre mí</span>
+        <h2 class="section-title">Hola, soy Vanessa.</h2>
+        <!-- Descripción personal -->
+        <p class="about-text">
+          Soy un desarrollador web frontend apasionado por la intersección entre diseño y tecnología.
+          Me especializo en crear interfaces accesibles, rápidas y visualmente memorables usando
+          HTML5, CSS moderno y JavaScript. Actualmente estudio Ingeniería de Sistemas y dedico
+          mi tiempo libre a proyectos creativos, mi familia y, por supuesto, a mis adorables mascotas.
+        </p>
+        <!-- Habilidades destacadas -->
+        <ul class="skills-list" aria-label="Habilidades técnicas">
+          <li>HTML5 &amp; Semántica</li>
+          <li>CSS3 &amp; Diseño Responsivo</li>
+          <li>JavaScript ES6+</li>
+          <li>Accesibilidad Web</li>
+          <li>Git &amp; Control de versiones</li>
+        </ul>
+      </div>
+      <!-- Imagen decorativa de perfil (placeholder) -->
+      <div class="about-image-wrap" aria-hidden="true">
+        <div class="about-image-placeholder">
+          <span>AR</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: PROYECTOS ===================== -->
+    <section id="proyectos" class="section section-projects">
+      <div class="section-inner">
+        <span class="section-tag">02 — Proyectos</span>
+        <h2 class="section-title">Lo que he construido.</h2>
+
+        <!-- Lista de proyectos con enlaces simulados -->
+        <ul class="projects-list">
+
+          <li class="project-card">
+            <div class="project-number">01</div>
+            <div class="project-info">
+              <h3><a href="#proyectos" class="project-link">Tienda de libros en línea</a></h3>
+              <p>Plataforma de comercio electrónico con catálogo filtrable y carrito de compras.</p>
+              <span class="project-tech">HTML · CSS · JavaScript</span>
+            </div>
+          </li>
+
+          <li class="project-card">
+            <div class="project-number">02</div>
+            <div class="project-info">
+              <h3><a href="#proyectos" class="project-link">Dashboard de clima</a></h3>
+              <p>Aplicación que muestra pronóstico del tiempo en tiempo real usando una API pública.</p>
+              <span class="project-tech">JavaScript · API REST · CSS Grid</span>
+            </div>
+          </li>
+
+          <li class="project-card">
+            <div class="project-number">03</div>
+            <div class="project-info">
+              <h3><a href="#proyectos" class="project-link">Blog personal de viajes</a></h3>
+              <p>Sitio estático con artículos ilustrados y galería de fotos de mis recorridos.</p>
+              <span class="project-tech">HTML5 · CSS Flexbox · Figma</span>
+            </div>
+          </li>
+
+          <li class="project-card">
+            <div class="project-number">04</div>
+            <div class="project-info">
+              <h3><a href="mascotas.html" class="project-link">Página de mis mascotas 🐾</a></h3>
+              <p>Galería dedicada a mis adorables animales de compañía con descripciones y fotos.</p>
+              <span class="project-tech">HTML5 · CSS · Diseño Responsivo</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SECCIÓN: CONTACTO ===================== -->
+    <section id="contacto" class="section section-contact">
+      <div class="section-inner">
+        <span class="section-tag">03 — Contacto</span>
+        <h2 class="section-title">Hablemos.</h2>
+        <p class="contact-intro">
+          ¿Tienes un proyecto en mente o simplemente quieres saludar? Escríbeme y te respondo pronto.
+        </p>
+
+        <!-- Formulario básico de contacto -->
+        <form class="contact-form" action="#" method="post">
+
+          <!-- Campo: Nombre -->
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required aria-required="true" />
+          </div>
+
+          <!-- Campo: Correo electrónico -->
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required aria-required="true" />
+          </div>
+
+          <!-- Campo: Mensaje -->
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto..." required
+              aria-required="true"></textarea>
+          </div>
+
+          <!-- Botón de envío -->
+          <button type="submit" class="btn-primary btn-submit">Enviar mensaje →</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 Vanessa Fontalvo. Hecho con ♥ y mucho café.</p>
+      <!-- Enlace a mascotas también en el footer -->
+      <a href="mascotas.html" class="footer-link">🐾 Conoce a mis mascotas</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
