@@ -1,39 +1,49 @@
 /* ============================================================
-   styles.css — Portafolio Personal de Alejandro Reyes
+   styles.css — Portafolio Personal 
    Estética: Editorial moderna con toques orgánicos
    ============================================================ */
 
 /* ---- Variables globales de diseño ---- */
 :root {
   /* Paleta de colores */
-  --color-bg:          #F7F4EE;   /* Crema cálido — fondo principal */
-  --color-bg-alt:      #EDEAE3;   /* Crema más oscuro — secciones alternas */
-  --color-surface:     #FFFFFF;   /* Blanco puro — tarjetas */
-  --color-ink:         #1A1612;   /* Casi negro — texto principal */
-  --color-ink-light:   #6B6560;   /* Gris marrón — texto secundario */
-  --color-accent:      #C0572B;   /* Terracota — acento principal */
-  --color-accent-soft: #F0C9B5;   /* Terracota pastel — fondos de acento */
-  --color-gold:        #B8860B;   /* Dorado oscuro — detalles especiales */
-  --color-pets:        #3D6B4F;   /* Verde bosque — tema mascotas */
-  --color-pets-light:  #C5DBC9;   /* Verde claro — fondos mascotas */
+  --color-bg: #F7F4EE;
+  /* Crema cálido — fondo principal */
+  --color-bg-alt: #EDEAE3;
+  /* Crema más oscuro — secciones alternas */
+  --color-surface: #FFFFFF;
+  /* Blanco puro — tarjetas */
+  --color-ink: #1A1612;
+  /* Casi negro — texto principal */
+  --color-ink-light: #6B6560;
+  /* Gris marrón — texto secundario */
+  --color-accent: #C0572B;
+  /* Terracota — acento principal */
+  --color-accent-soft: #F0C9B5;
+  /* Terracota pastel — fondos de acento */
+  --color-gold: #B8860B;
+  /* Dorado oscuro — detalles especiales */
+  --color-pets: #3D6B4F;
+  /* Verde bosque — tema mascotas */
+  --color-pets-light: #C5DBC9;
+  /* Verde claro — fondos mascotas */
 
   /* Tipografía */
-  --font-display:  'Playfair Display', Georgia, serif;
-  --font-body:     'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
 
   /* Espaciado base */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  2rem;
-  --space-lg:  4rem;
-  --space-xl:  7rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 7rem;
 
   /* Bordes y sombras */
   --radius-sm: 6px;
   --radius-md: 14px;
   --radius-lg: 24px;
   --shadow-card: 0 4px 24px rgba(26, 22, 18, 0.10);
-  --shadow-img:  0 8px 32px rgba(26, 22, 18, 0.18);
+  --shadow-img: 0 8px 32px rgba(26, 22, 18, 0.18);
 
   /* Transiciones */
   --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
@@ -42,7 +52,9 @@
 /* ============================================================
    RESET Y BASE
    ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -83,15 +95,25 @@ a {
 /* ============================================================
    TIPOGRAFÍA
    ============================================================ */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
-h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
 
 em {
   font-style: italic;
@@ -207,7 +229,8 @@ em {
 }
 
 .nav-highlight::after {
-  display: none; /* Sin línea en el botón redondeado */
+  display: none;
+  /* Sin línea en el botón redondeado */
 }
 
 /* Enlace "volver" en página de mascotas */
@@ -314,7 +337,7 @@ em {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
   pointer-events: none;
 }
@@ -402,7 +425,7 @@ em {
 .btn-back:hover {
   background: transparent;
   color: white;
-  border-color: rgba(255,255,255,0.6);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* ============================================================
@@ -449,9 +472,11 @@ em {
   padding: var(--space-xl) var(--space-md);
 }
 
-.section-about .section-inner {
-  /* El inner ocupa la columna izquierda */
-}
+/* .section-about .section-inner {
+   El inner ocupa la columna izquierda 
+} */
+
+
 
 .about-text {
   font-size: 1.05rem;
@@ -507,7 +532,8 @@ em {
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 1px; /* Separa con una línea fina */
+  gap: 1px;
+  /* Separa con una línea fina */
   background: rgba(26, 22, 18, 0.08);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -720,8 +746,13 @@ em {
   border-radius: 20px;
 }
 
-.pet-badge--dog   { background: #8B5A2B; }
-.pet-badge--rabbit { background: #6B4C8F; }
+.pet-badge--dog {
+  background: #8B5A2B;
+}
+
+.pet-badge--rabbit {
+  background: #6B4C8F;
+}
 
 /* Información de la mascota */
 .pet-info {
@@ -880,6 +911,7 @@ em {
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -912,7 +944,8 @@ em {
   }
 
   .hero-deco {
-    display: none; /* Oculta decoración en móvil */
+    display: none;
+    /* Oculta decoración en móvil */
   }
 
   /* En móvil, la sección "sobre mí" se apila verticalmente */
@@ -924,7 +957,8 @@ em {
   .about-image-wrap {
     display: flex;
     justify-content: center;
-    order: -1; /* La imagen va arriba */
+    order: -1;
+    /* La imagen va arriba */
   }
 
   .skills-list {
