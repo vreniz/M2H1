@@ -243,6 +243,7 @@ em {
   color: var(--color-pets) !important;
 }
 
+
 .nav-back::after {
   background: var(--color-pets) !important;
 }
@@ -330,6 +331,12 @@ em {
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* 👈 para mantener orden vertical */
+  align-items: center;
+  /* 👈 ahora sí centra */
 }
 
 .pets-hero::before {
@@ -346,8 +353,9 @@ em {
   position: relative;
   z-index: 2;
   max-width: 600px;
-  margin: 0 auto;
   animation: fadeUp 0.8s ease both;
+
+
 }
 
 .pets-hero .hero-label {
@@ -510,13 +518,14 @@ em {
 
 /* Placeholder circular de imagen de perfil */
 .about-image-placeholder {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent));
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 45px;
   font-family: var(--font-display);
   font-size: 2.8rem;
   font-weight: 700;
